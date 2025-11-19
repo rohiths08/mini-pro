@@ -16,7 +16,16 @@ export default function FlowchartRenderer({ mermaidSource, isLoading, error }: F
   const chartDefinition = useMemo(() => mermaidSource.trim(), [mermaidSource])
 
   useEffect(() => {
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' })
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'dark',
+      securityLevel: 'loose',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis'
+      }
+    })
   }, [])
 
   useEffect(() => {
@@ -27,6 +36,18 @@ export default function FlowchartRenderer({ mermaidSource, isLoading, error }: F
         setRenderError(error || null)
         return
       }
+      
+      // Validate that the chart definition looks correct
+      const trimmed = chartDefinition.trim()
+      if (!trimmed.startsWith('flowchart') && !trimmed.startsWith('graph')) {
+        if (isMounted) {
+          setRenderError('Invalid Mermaid syntax: Chart must start with "flowchart" or "graph"')
+          setSvg('')
+          console.error('Invalid mermaid code:', trimmed.substring(0, 100))
+        }
+        return
+      }
+      
       try {
         const { svg } = await mermaid.render(`flowchart-${Date.now()}`, chartDefinition)
         if (isMounted) {
@@ -35,7 +56,10 @@ export default function FlowchartRenderer({ mermaidSource, isLoading, error }: F
         }
       } catch (err) {
         if (isMounted) {
-          setRenderError((err as Error).message)
+          const errorMsg = (err as Error).message
+          console.error('Mermaid render error:', errorMsg)
+          console.error('Mermaid code:', chartDefinition)
+          setRenderError(`Flowchart render error: ${errorMsg}`)
           setSvg('')
         }
       }

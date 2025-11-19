@@ -607,7 +607,9 @@ const languages = [
     'python',
     'java',
     'go',
-    'csharp'
+    'csharp',
+    'cpp',
+    'c'
 ];
 function CodeEditor({ code, language, fileName, onCodeChange, onSubmit, isSubmitting, onLanguageChange, onFileNameChange }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -873,8 +875,32 @@ function AIResponseBox({ title, content, isLoading, error, emptyMessage = 'Run t
                     lineNumber: 59,
                     columnNumber: 11
                 }, this) : content ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "prose prose-invert prose-sm max-w-none text-foreground",
+                    className: "prose prose-invert prose-sm max-w-none text-foreground prose-headings:text-foreground prose-code:text-primary prose-pre:bg-background prose-pre:border prose-pre:border-border",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$react$2d$markdown$40$10$2e$1$2e$0_$40$types$2b$react$40$19$2e$0$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
+                        components: {
+                            code: ({ node, inline, className, children, ...props })=>{
+                                if (inline) {
+                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                                        className: "bg-muted px-1.5 py-0.5 rounded text-sm font-mono",
+                                        ...props,
+                                        children: children
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/features/ai-response-box.tsx",
+                                        lineNumber: 69,
+                                        columnNumber: 23
+                                    }, void 0);
+                                }
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                                    className: className,
+                                    ...props,
+                                    children: children
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 75,
+                                    columnNumber: 21
+                                }, void 0);
+                            }
+                        },
                         children: content
                     }, void 0, false, {
                         fileName: "[project]/components/features/ai-response-box.tsx",
@@ -890,7 +916,7 @@ function AIResponseBox({ title, content, isLoading, error, emptyMessage = 'Run t
                     children: emptyMessage
                 }, void 0, false, {
                     fileName: "[project]/components/features/ai-response-box.tsx",
-                    lineNumber: 67,
+                    lineNumber: 86,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
@@ -1077,7 +1103,13 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
         "FlowchartRenderer.useEffect": ()=>{
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$mermaid$40$11$2e$12$2e$1$2f$node_modules$2f$mermaid$2f$dist$2f$mermaid$2e$core$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].initialize({
                 startOnLoad: true,
-                theme: 'dark'
+                theme: 'dark',
+                securityLevel: 'loose',
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'basis'
+                }
             });
         }
     }["FlowchartRenderer.useEffect"], []);
@@ -1091,6 +1123,16 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                         setRenderError(error || null);
                         return;
                     }
+                    // Validate that the chart definition looks correct
+                    const trimmed = chartDefinition.trim();
+                    if (!trimmed.startsWith('flowchart') && !trimmed.startsWith('graph')) {
+                        if (isMounted) {
+                            setRenderError('Invalid Mermaid syntax: Chart must start with "flowchart" or "graph"');
+                            setSvg('');
+                            console.error('Invalid mermaid code:', trimmed.substring(0, 100));
+                        }
+                        return;
+                    }
                     try {
                         const { svg } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$mermaid$40$11$2e$12$2e$1$2f$node_modules$2f$mermaid$2f$dist$2f$mermaid$2e$core$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].render(`flowchart-${Date.now()}`, chartDefinition);
                         if (isMounted) {
@@ -1099,7 +1141,10 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                         }
                     } catch (err) {
                         if (isMounted) {
-                            setRenderError(err.message);
+                            const errorMsg = err.message;
+                            console.error('Mermaid render error:', errorMsg);
+                            console.error('Mermaid code:', chartDefinition);
+                            setRenderError(`Flowchart render error: ${errorMsg}`);
                             setSvg('');
                         }
                     }
@@ -1126,12 +1171,12 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                     children: "Flowchart"
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 52,
+                    lineNumber: 76,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/features/flowchart-renderer.tsx",
-                lineNumber: 51,
+                lineNumber: 75,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1143,34 +1188,34 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                             className: "h-4 bg-muted-foreground/20 rounded w-1/2 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/components/features/flowchart-renderer.tsx",
-                            lineNumber: 57,
+                            lineNumber: 81,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-4 bg-muted-foreground/20 rounded w-3/4 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/components/features/flowchart-renderer.tsx",
-                            lineNumber: 58,
+                            lineNumber: 82,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-4 bg-muted-foreground/20 rounded w-2/3 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/components/features/flowchart-renderer.tsx",
-                            lineNumber: 59,
+                            lineNumber: 83,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 56,
+                    lineNumber: 80,
                     columnNumber: 11
                 }, this) : renderError ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive max-w-md text-center",
                     children: renderError
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 62,
+                    lineNumber: 86,
                     columnNumber: 11
                 }, this) : svg ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "w-full max-w-3xl",
@@ -1180,25 +1225,25 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                     "aria-label": "Generated flowchart"
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 66,
+                    lineNumber: 90,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-sm text-muted-foreground text-center",
                     children: "Run the flowchart generator to visualize logic."
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 72,
+                    lineNumber: 96,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/features/flowchart-renderer.tsx",
-                lineNumber: 54,
+                lineNumber: 78,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/features/flowchart-renderer.tsx",
-        lineNumber: 50,
+        lineNumber: 74,
         columnNumber: 5
     }, this);
 }
@@ -1257,7 +1302,13 @@ function FlowchartWorkspace() {
                     file_name: fileName
                 }
             });
-            setDiagram(result.mermaid ?? '');
+            if (result.error) {
+                setError(result.error);
+                setDiagram(result.mermaid ?? '');
+            } else {
+                setDiagram(result.mermaid ?? '');
+                console.log('Received mermaid code:', result.mermaid?.substring(0, 100));
+            }
         } catch (err) {
             setError(err.message);
             setDiagram('');
@@ -1279,7 +1330,7 @@ function FlowchartWorkspace() {
                 isSubmitting: isLoading
             }, void 0, false, {
                 fileName: "[project]/components/features/flowchart-workspace.tsx",
-                lineNumber: 42,
+                lineNumber: 49,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$features$2f$flowchart$2d$renderer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1288,13 +1339,13 @@ function FlowchartWorkspace() {
                 error: error
             }, void 0, false, {
                 fileName: "[project]/components/features/flowchart-workspace.tsx",
-                lineNumber: 52,
+                lineNumber: 59,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/features/flowchart-workspace.tsx",
-        lineNumber: 41,
+        lineNumber: 48,
         columnNumber: 5
     }, this);
 }

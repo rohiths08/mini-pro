@@ -23,12 +23,19 @@ export default function FlowchartWorkspace() {
     setIsLoading(true)
     setError(null)
     try {
-      const result = await apiRequest<{ mermaid: string }>('/ai/flowchart', {
+      const result = await apiRequest<{ mermaid: string; error?: string }>('/ai/flowchart', {
         method: 'POST',
         token,
         body: { code, language, file_name: fileName },
       })
-      setDiagram(result.mermaid ?? '')
+      
+      if (result.error) {
+        setError(result.error)
+        setDiagram(result.mermaid ?? '')
+      } else {
+        setDiagram(result.mermaid ?? '')
+        console.log('Received mermaid code:', result.mermaid?.substring(0, 100))
+      }
     } catch (err) {
       setError((err as Error).message)
       setDiagram('')

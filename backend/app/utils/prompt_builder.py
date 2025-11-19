@@ -140,18 +140,39 @@ def build_flowchart_prompt(code: str, language: str) -> str:
 
     return dedent(
         f"""
-        Convert the following {language} code into a Mermaid flowchart that
-        represents control flow and key decision points. Use concise node labels.
+        Convert the following {language} code into a Mermaid flowchart compatible with Mermaid v11.12.1.
+        
+        CRITICAL FORMATTING RULES:
+        1. DO NOT wrap your response in markdown code blocks
+        2. DO NOT use backticks (```) anywhere in your response
+        3. DO NOT write "```mermaid" or "```" at all
+        4. Start your response IMMEDIATELY with "flowchart TD" or "graph TD"
+        5. Use proper Mermaid syntax for nodes and connections
+        6. Keep node labels short and descriptive
+        7. Use square brackets [text] for process nodes
+        8. Use double parentheses ((text)) for start/end nodes
+        9. Use curly braces {{{{text}}}} for decision nodes
+        10. Use proper arrow syntax: --> for connections
+        
+        CORRECT Example (start response exactly like this):
+        flowchart TD
+            Start((Start)) --> Input[Get Input]
+            Input --> Check{{Valid?}}
+            Check -->|Yes| Process[Process Data]
+            Check -->|No| Error[Show Error]
+            Process --> End((End))
+            Error --> End
 
-        Code:
+        WRONG Examples (DO NOT do this):
+        - Starting with: ```mermaid
+        - Ending with: ```
+        - Adding any markdown formatting
+
+        Code to convert:
         ```{language}
         {code}
         ```
 
-        Output format:
-        ```mermaid
-        flowchart TD
-        %% nodes and edges
-        ```
+        Generate ONLY the flowchart code starting with "flowchart TD" and nothing else:
         """
     ).strip()

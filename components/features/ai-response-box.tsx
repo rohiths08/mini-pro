@@ -60,8 +60,27 @@ export default function AIResponseBox({
             {error}
           </div>
         ) : content ? (
-          <div className="prose prose-invert prose-sm max-w-none text-foreground">
-            <ReactMarkdown>{content}</ReactMarkdown>
+          <div className="prose prose-invert prose-sm max-w-none text-foreground prose-headings:text-foreground prose-code:text-primary prose-pre:bg-background prose-pre:border prose-pre:border-border">
+            <ReactMarkdown
+              components={{
+                code: ({ node, inline, className, children, ...props }) => {
+                  if (inline) {
+                    return (
+                      <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+                        {children}
+                      </code>
+                    )
+                  }
+                  return (
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  )
+                },
+              }}
+            >
+              {content}
+            </ReactMarkdown>
           </div>
         ) : (
           <p className="text-sm text-muted-foreground">{emptyMessage}</p>

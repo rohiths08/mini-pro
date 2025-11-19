@@ -1,10 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, status, Header
 from motor.motor_asyncio import AsyncIOMotorDatabase
 from pydantic import BaseModel, EmailStr
 from app.config import get_db, settings
 from app.auth.google_oauth import get_google_oauth_url, exchange_google_code
 from app.auth.github_oauth import get_github_oauth_url, exchange_github_code
-from app.auth.auth_utils import generate_jwt
+from app.auth.auth_utils import generate_jwt, decode_jwt
 from app.auth.user_model import UserModel
 from fastapi.responses import RedirectResponse
 
@@ -85,4 +85,37 @@ async def demo_login(
             "name": user.get("name"),
             "picture": user.get("picture")
         }
+    }
+
+
+async def get_current_user(authorization: str = Header(...)):
+    """Extract and verify user from JWT token"""
+    try:
+        token = authorization.split(" ")[1]
+        payload = decode_jwt(token)
+        if not payload or "user_id" not in payload:
+            raise HTTPException(status_code=401, detail="Invalid token")
+        return payload
+    except:
+        raise HTTPException(status_code=401, detail="Invalid authorization header")
+
+
+@router.get("/profile")
+async def get_profile(
+    current_user = Depends(get_current_user),
+    db: AsyncIOMotorDatabase = Depends(get_db)
+):
+    """Get current user profile information"""
+    user_model = UserModel(db)
+    user = await user_model.find_by_id(current_user["user_id"])
+    
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    return {
+        "id": str(user["_id"]),
+        "email": user["email"],
+        "name": user.get("name"),
+        "picture": user.get("picture"),
+        "created_at": user.get("created_at")
     }

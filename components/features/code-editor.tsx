@@ -4,7 +4,7 @@ import Editor from '@monaco-editor/react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
-const languages = ['javascript', 'typescript', 'python', 'java', 'go', 'csharp']
+const languages = ['javascript', 'typescript', 'python', 'java', 'go', 'csharp', 'cpp', 'c']
 
 interface CodeEditorProps {
   code: string
