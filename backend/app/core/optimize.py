@@ -1,27 +1,18 @@
-import google.generativeai as genai
-from app.config import settings
+from app.utils.ai_client import generate_with_fallback
 from app.utils.prompt_builder import build_optimize_prompt
 
-genai.configure(api_key=settings.GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")
-
 async def optimize_code(code_content: str, language: str) -> dict:
-    """Optimize code for performance and readability"""
+    """Generate optimization suggestions for code"""
     
     prompt = build_optimize_prompt(code=code_content, language=language)
     
     try:
-        response = model.generate_content(prompt)
+        response_text = await generate_with_fallback(prompt)
         
         return {
-            "refactored_code": response.text,
-            "suggestions": [
-                "Consider caching repeated operations",
-                "Use async/await for I/O operations",
-                "Add error handling for edge cases"
-            ],
-            "estimated_complexity": "O(n)",
-            "language": language
+            "refactored_code": response_text,
+            "language": language,
+            "notes": "Review suggestions and apply selectively"
         }
     except Exception as e:
         return {

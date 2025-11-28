@@ -1,11 +1,7 @@
-import google.generativeai as genai
 from typing import Optional
-from app.config import settings
+from app.utils.ai_client import generate_with_fallback
 from app.utils.prompt_builder import build_doc_prompt
 import time
-
-genai.configure(api_key=settings.GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")
 
 async def generate_documentation(
     code_content: str,
@@ -32,12 +28,12 @@ async def generate_documentation(
     )
     
     try:
-        response = model.generate_content(prompt)
+        response_text = await generate_with_fallback(prompt)
         duration = time.time() - start_time
         
         return {
-            "markdown": response.text,
-            "tokens_used": len(response.text) // 4,  # Rough estimate
+            "markdown": response_text,
+            "tokens_used": len(response_text) // 4,  # Rough estimate
             "duration_seconds": round(duration, 2),
             "language": language
         }

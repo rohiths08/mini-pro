@@ -1,12 +1,17 @@
-import google.generativeai as genai
+from huggingface_hub import InferenceClient
 import logging
 import re
 from app.config import settings
 from app.utils.prompt_builder import build_flowchart_prompt
 
 logger = logging.getLogger(__name__)
-genai.configure(api_key=settings.GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")
+
+# Initialize Hugging Face client
+# Using Qwen2.5-Coder-32B-Instruct which is excellent for code tasks
+client = InferenceClient(
+    "Qwen/Qwen2.5-Coder-32B-Instruct",
+    token=settings.HUGGINGFACE_API_KEY
+)
 
 def sanitize_mermaid_node_ids(mermaid_code: str) -> str:
     """
@@ -44,11 +49,19 @@ def sanitize_mermaid_node_ids(mermaid_code: str) -> str:
 async def generate_flowchart(code_content: str, language: str) -> dict:
     """Generate Mermaid flowchart from code"""
     
-    prompt = build_flowchart_prompt(code=code_content, language=language)
-    
     try:
-        response = model.generate_content(prompt)
-        raw_text = response.text.strip()
+        if not settings.HUGGINGFACE_API_KEY:
+            logger.warning("HUGGINGFACE_API_KEY not set. Flowchart generation may fail.")
+            
+        prompt = build_flowchart_prompt(code=code_content, language=language)
+        
+        messages = [
+            {"role": "user", "content": prompt}
+        ]
+        
+        # Call Hugging Face Inference API
+        response = client.chat_completion(messages, max_tokens=2000)
+        raw_text = response.choices[0].message.content.strip()
         
         # Log the raw response for debugging
         logger.info(f"Raw AI response (first 200 chars): {raw_text[:200]}")
@@ -75,6 +88,7 @@ async def generate_flowchart(code_content: str, language: str) -> dict:
         # Ensure it starts with a valid mermaid diagram type
         valid_types = ["flowchart", "graph", "sequenceDiagram", "classDiagram", "stateDiagram", "erDiagram", "gantt", "pie", "journey", "gitGraph", "C4Context"]
         
+        
         def starts_with_valid_type(code):
             return any(code.startswith(t) for t in valid_types)
 
@@ -94,6 +108,62 @@ async def generate_flowchart(code_content: str, language: str) -> dict:
                 "mermaid": "flowchart TD\n    A[Error] --> B[Invalid flowchart format]"
             }
         
+        # Fix unquoted labels containing special characters
+        def fix_unquoted_labels(code: str) -> str:
+            """Fix labels that contain special characters but aren't quoted."""
+            lines = []
+            for line in code.split('\n'):
+                # Skip flowchart/graph declaration lines
+                if line.strip().startswith(('flowchart', 'graph')):
+                    lines.append(line)
+                    continue
+                
+                # Pattern to match node definitions with square brackets or curly braces
+                # Look for patterns like: nodeId[text with (parens) or /slashes or "quotes"]
+                # that aren't already wrapped in quotes
+                
+                # Fix square bracket labels [text] that contain special chars but no quotes
+                def fix_bracket_label(match):
+                    full = match.group(0)  # e.g., "nodeId[Call factorial(5)]"
+                    node_id = match.group(1)  # e.g., "nodeId"
+                    label = match.group(2)  # e.g., "Call factorial(5)"
+                    
+                    # Check if label contains special characters and isn't already quoted
+                    if not (label.startswith('"') and label.endswith('"')):
+                        # Check for special characters that need quoting
+                        special_chars = ['(', ')', '[', ']', '{', '}', '/', '"', "'", '\\', '<', '>', '=', '*', '-']
+                        if any(char in label for char in special_chars):
+                            # Escape any existing quotes in the label
+                            escaped_label = label.replace('"', '\\"')
+                            return f'{node_id}["{escaped_label}"]'
+                    return full
+                
+                # Fix curly brace labels {{text}} that contain special chars but no quotes
+                def fix_curly_label(match):
+                    full = match.group(0)  # e.g., "nodeId{{n === 0?}}"
+                    node_id = match.group(1)  # e.g., "nodeId"
+                    label = match.group(2)  # e.g., "n === 0?"
+                    
+                    # Check if label contains special characters and isn't already quoted
+                    if not (label.startswith('"') and label.endswith('"')):
+                        special_chars = ['(', ')', '[', ']', '{', '}', '/', '"', "'", '\\', '<', '>', '=', '*']
+                        if any(char in label for char in special_chars):
+                            escaped_label = label.replace('"', '\\"')
+                            return f'{node_id}{{{{{escaped_label}}}}}'
+                    return full
+                
+                # Apply fixes - match node definitions with square brackets
+                line = re.sub(r'(\w+)\[([^\]]+)\]', fix_bracket_label, line)
+                # Apply fixes - match node definitions with double curly braces
+                line = re.sub(r'(\w+)\{\{([^}]+)\}\}', fix_curly_label, line)
+                
+                lines.append(line)
+            
+            return '\n'.join(lines)
+        
+        mermaid_code = fix_unquoted_labels(mermaid_code)
+        logger.info(f"Fixed labels (first 200 chars): {mermaid_code[:200]}")
+        
         # Sanitize node IDs to remove underscores and hyphens
         mermaid_code = sanitize_mermaid_node_ids(mermaid_code)
         logger.info(f"Sanitized mermaid code (first 200 chars): {mermaid_code[:200]}")
@@ -103,6 +173,7 @@ async def generate_flowchart(code_content: str, language: str) -> dict:
             "language": language
         }
     except Exception as e:
+        logger.error(f"Flowchart generation failed: {str(e)}")
         return {
             "error": str(e),
             "mermaid": "flowchart TD\n    A[Error] --> B[Failed to generate flowchart]"

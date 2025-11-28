@@ -1,9 +1,5 @@
-import google.generativeai as genai
-from app.config import settings
+from app.utils.ai_client import generate_with_fallback
 from app.utils.prompt_builder import build_test_prompt
-
-genai.configure(api_key=settings.GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")
 
 async def generate_unit_tests(code_content: str, language: str) -> dict:
     """Generate unit tests for code"""
@@ -11,10 +7,10 @@ async def generate_unit_tests(code_content: str, language: str) -> dict:
     prompt = build_test_prompt(code=code_content, language=language)
     
     try:
-        response = model.generate_content(prompt)
+        response_text = await generate_with_fallback(prompt)
         
         return {
-            "test_source": response.text,
+            "test_source": response_text,
             "language": language,
             "notes": "Generated tests cover main functions and edge cases"
         }

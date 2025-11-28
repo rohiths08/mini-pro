@@ -8,6 +8,7 @@ class Settings:
     """Application configuration"""
     # API Keys
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+    HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY", "")
     
     # OAuth
     GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")

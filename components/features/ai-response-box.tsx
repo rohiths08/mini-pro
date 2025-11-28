@@ -2,6 +2,8 @@
 
 import { Copy, Download } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { Button } from '@/components/ui/button'
 
 interface AIResponseBoxProps {
@@ -63,31 +65,50 @@ export default function AIResponseBox({
           <div className="prose prose-invert prose-sm max-w-none text-foreground prose-headings:text-foreground prose-code:text-primary prose-pre:bg-background prose-pre:border prose-pre:border-border">
             <ReactMarkdown
               components={{
-                h1: ({ node, ...props }) => <h1 className="text-2xl font-bold mt-6 mb-4 text-foreground" {...props} />,
-                h2: ({ node, ...props }) => <h2 className="text-xl font-semibold mt-5 mb-3 text-foreground" {...props} />,
-                h3: ({ node, ...props }) => <h3 className="text-lg font-medium mt-4 mb-2 text-foreground" {...props} />,
-                h4: ({ node, ...props }) => <h4 className="text-base font-medium mt-3 mb-2 text-foreground" {...props} />,
-                p: ({ node, ...props }) => <p className="mb-4 leading-relaxed text-foreground/90" {...props} />,
-                ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4 space-y-1" {...props} />,
-                ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4 space-y-1" {...props} />,
-                li: ({ node, ...props }) => <li className="text-foreground/90" {...props} />,
+                h1: ({ node, ...props }) => <h1 className="text-2xl font-bold mt-6 mb-4 text-foreground border-b border-border pb-2" {...props} />,
+                h2: ({ node, ...props }) => <h2 className="text-xl font-semibold mt-6 mb-3 text-foreground border-b border-border/50 pb-1" {...props} />,
+                h3: ({ node, ...props }) => <h3 className="text-lg font-medium mt-5 mb-2 text-foreground" {...props} />,
+                h4: ({ node, ...props }) => <h4 className="text-base font-medium mt-4 mb-2 text-foreground/90" {...props} />,
+                p: ({ node, ...props }) => <p className="mb-3 leading-relaxed text-foreground/90" {...props} />,
+                ul: ({ node, ...props }) => <ul className="list-disc list-outside ml-6 mb-4 space-y-2" {...props} />,
+                ol: ({ node, ...props }) => <ol className="list-decimal list-outside ml-6 mb-4 space-y-2" {...props} />,
+                li: ({ node, ...props }) => <li className="text-foreground/90 leading-relaxed" {...props} />,
                 a: ({ node, ...props }) => <a className="text-primary hover:underline" {...props} />,
                 blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-primary/50 pl-4 italic my-4 text-muted-foreground" {...props} />,
+                strong: ({ node, ...props }) => <strong className="font-semibold text-foreground" {...props} />,
+                em: ({ node, ...props }) => <em className="italic text-foreground/95" {...props} />,
+                hr: ({ node, ...props }) => <hr className="my-6 border-border" {...props} />,
                 code: ({ node, inline, className, children, ...props }: any) => {
+                  const match = /language-(\w+)/.exec(className || '')
+                  const language = match ? match[1] : 'text'
+                  const codeString = String(children).replace(/\n$/, '')
+
                   if (inline) {
                     return (
-                      <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-foreground" {...props}>
+                      <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-primary" {...props}>
                         {children}
                       </code>
                     )
                   }
+
                   return (
-                    <code className="block bg-muted p-4 rounded-lg text-sm font-mono overflow-x-auto text-foreground my-4" {...props}>
-                      {children}
-                    </code>
+                    <SyntaxHighlighter
+                      language={language}
+                      style={vscDarkPlus}
+                      customStyle={{
+                        margin: '1rem 0',
+                        borderRadius: '0.5rem',
+                        fontSize: '0.875rem',
+                        border: '1px solid hsl(var(--border))',
+                      }}
+                      PreTag="div"
+                      {...props}
+                    >
+                      {codeString}
+                    </SyntaxHighlighter>
                   )
                 },
-                pre: ({ node, ...props }) => <pre className="bg-transparent p-0 m-0" {...props} />,
+                pre: ({ node, children, ...props }) => <>{children}</>,
               }}
             >
               {content}
