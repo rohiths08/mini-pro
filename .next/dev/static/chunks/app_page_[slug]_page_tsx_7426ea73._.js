@@ -1,8 +1,8 @@
 (globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
-  "static/chunks/node_modules__pnpm_da1de5be._.js",
-  "static/chunks/_3c44a79a._.js",
+  "static/chunks/node_modules__pnpm_cbba4eb2._.js",
+  "static/chunks/_20d5f5ca._.js",
   "static/chunks/f545a_micromark_dev_lib_2a08bc19._.js",
   "static/chunks/b5ecd_micromark-core-commonmark_dev_lib_bc76a96f._.js",
   "static/chunks/931bf_mermaid_dist_6a55fbf0._.js",

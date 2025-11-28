@@ -866,28 +866,116 @@ function AIResponseBox({ title, content, isLoading, error, emptyMessage = 'Run t
                     className: "prose prose-invert prose-sm max-w-none text-foreground prose-headings:text-foreground prose-code:text-primary prose-pre:bg-background prose-pre:border prose-pre:border-border",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$react$2d$markdown$40$10$2e$1$2e$0_$40$types$2b$react$40$19$2e$0$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
                         components: {
+                            h1: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-2xl font-bold mt-6 mb-4 text-foreground",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 66,
+                                    columnNumber: 45
+                                }, void 0),
+                            h2: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-xl font-semibold mt-5 mb-3 text-foreground",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 67,
+                                    columnNumber: 45
+                                }, void 0),
+                            h3: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "text-lg font-medium mt-4 mb-2 text-foreground",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 68,
+                                    columnNumber: 45
+                                }, void 0),
+                            h4: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                    className: "text-base font-medium mt-3 mb-2 text-foreground",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 69,
+                                    columnNumber: 45
+                                }, void 0),
+                            p: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mb-4 leading-relaxed text-foreground/90",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 70,
+                                    columnNumber: 44
+                                }, void 0),
+                            ul: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                    className: "list-disc list-inside mb-4 space-y-1",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 71,
+                                    columnNumber: 45
+                                }, void 0),
+                            ol: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
+                                    className: "list-decimal list-inside mb-4 space-y-1",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 72,
+                                    columnNumber: 45
+                                }, void 0),
+                            li: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "text-foreground/90",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 73,
+                                    columnNumber: 45
+                                }, void 0),
+                            a: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    className: "text-primary hover:underline",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 74,
+                                    columnNumber: 44
+                                }, void 0),
+                            blockquote: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
+                                    className: "border-l-4 border-primary/50 pl-4 italic my-4 text-muted-foreground",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 75,
+                                    columnNumber: 53
+                                }, void 0),
                             code: ({ node, inline, className, children, ...props })=>{
                                 if (inline) {
                                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                        className: "bg-muted px-1.5 py-0.5 rounded text-sm font-mono",
+                                        className: "bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-foreground",
                                         ...props,
                                         children: children
                                     }, void 0, false, {
                                         fileName: "[project]/components/features/ai-response-box.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 79,
                                         columnNumber: 23
                                     }, void 0);
                                 }
                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                    className: className,
+                                    className: "block bg-muted p-4 rounded-lg text-sm font-mono overflow-x-auto text-foreground my-4",
                                     ...props,
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/components/features/ai-response-box.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 85,
                                     columnNumber: 21
                                 }, void 0);
-                            }
+                            },
+                            pre: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
+                                    className: "bg-transparent p-0 m-0",
+                                    ...props
+                                }, void 0, false, {
+                                    fileName: "[project]/components/features/ai-response-box.tsx",
+                                    lineNumber: 90,
+                                    columnNumber: 46
+                                }, void 0)
                         },
                         children: content
                     }, void 0, false, {
@@ -904,7 +992,7 @@ function AIResponseBox({ title, content, isLoading, error, emptyMessage = 'Run t
                     children: emptyMessage
                 }, void 0, false, {
                     fileName: "[project]/components/features/ai-response-box.tsx",
-                    lineNumber: 86,
+                    lineNumber: 97,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
@@ -1024,7 +1112,7 @@ function FeatureWorkspace({ feature, title }) {
                 isSubmitting: isLoading
             }, void 0, false, {
                 fileName: "[project]/components/features/feature-workspace.tsx",
-                lineNumber: 93,
+                lineNumber: 94,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$features$2f$ai$2d$response$2d$box$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1035,13 +1123,13 @@ function FeatureWorkspace({ feature, title }) {
                 emptyMessage: instructions
             }, void 0, false, {
                 fileName: "[project]/components/features/feature-workspace.tsx",
-                lineNumber: 103,
+                lineNumber: 104,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/features/feature-workspace.tsx",
-        lineNumber: 92,
+        lineNumber: 93,
         columnNumber: 5
     }, this);
 }
@@ -1086,18 +1174,46 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                 setRenderError(error || null);
                 return;
             }
+            // Clean the mermaid code
+            const cleanMermaidCode = (code)=>{
+                let cleaned = code.trim();
+                // Remove markdown code blocks if present
+                cleaned = cleaned.replace(/^```mermaid\s*/i, '').replace(/^```\s*/, '');
+                cleaned = cleaned.replace(/```$/, '');
+                return cleaned.trim();
+            };
+            const cleanedDefinition = cleanMermaidCode(chartDefinition);
             // Validate that the chart definition looks correct
-            const trimmed = chartDefinition.trim();
-            if (!trimmed.startsWith('flowchart') && !trimmed.startsWith('graph')) {
-                if (isMounted) {
-                    setRenderError('Invalid Mermaid syntax: Chart must start with "flowchart" or "graph"');
-                    setSvg('');
-                    console.error('Invalid mermaid code:', trimmed.substring(0, 100));
+            // Relaxed validation to support more diagram types
+            const validTypes = [
+                'flowchart',
+                'graph',
+                'sequenceDiagram',
+                'classDiagram',
+                'stateDiagram',
+                'erDiagram',
+                'gantt',
+                'pie',
+                'journey',
+                'gitGraph',
+                'C4Context'
+            ];
+            const startsWithValidType = validTypes.some((type)=>cleanedDefinition.startsWith(type));
+            if (!startsWithValidType) {
+                // Fallback: if it doesn't start with a known type, try to find it in the first few lines
+                const lines = cleanedDefinition.split('\n');
+                const hasValidType = lines.some((line)=>validTypes.some((type)=>line.trim().startsWith(type)));
+                if (!hasValidType) {
+                    if (isMounted) {
+                        setRenderError('Invalid Mermaid syntax: Could not identify diagram type');
+                        setSvg('');
+                        console.error('Invalid mermaid code:', cleanedDefinition.substring(0, 100));
+                    }
+                    return;
                 }
-                return;
             }
             try {
-                const { svg } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$mermaid$40$11$2e$12$2e$1$2f$node_modules$2f$mermaid$2f$dist$2f$mermaid$2e$core$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].render(`flowchart-${Date.now()}`, chartDefinition);
+                const { svg } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$mermaid$40$11$2e$12$2e$1$2f$node_modules$2f$mermaid$2f$dist$2f$mermaid$2e$core$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].render(`flowchart-${Date.now()}`, cleanedDefinition);
                 if (isMounted) {
                     setSvg(svg);
                     setRenderError(null);
@@ -1130,12 +1246,12 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                     children: "Flowchart"
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 76,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/features/flowchart-renderer.tsx",
-                lineNumber: 75,
+                lineNumber: 96,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1147,34 +1263,34 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                             className: "h-4 bg-muted-foreground/20 rounded w-1/2 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/components/features/flowchart-renderer.tsx",
-                            lineNumber: 81,
+                            lineNumber: 102,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-4 bg-muted-foreground/20 rounded w-3/4 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/components/features/flowchart-renderer.tsx",
-                            lineNumber: 82,
+                            lineNumber: 103,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-4 bg-muted-foreground/20 rounded w-2/3 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/components/features/flowchart-renderer.tsx",
-                            lineNumber: 83,
+                            lineNumber: 104,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 80,
+                    lineNumber: 101,
                     columnNumber: 11
                 }, this) : renderError ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive max-w-md text-center",
                     children: renderError
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 86,
+                    lineNumber: 107,
                     columnNumber: 11
                 }, this) : svg ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "w-full max-w-3xl",
@@ -1184,25 +1300,25 @@ function FlowchartRenderer({ mermaidSource, isLoading, error }) {
                     "aria-label": "Generated flowchart"
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 90,
+                    lineNumber: 111,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-sm text-muted-foreground text-center",
                     children: "Run the flowchart generator to visualize logic."
                 }, void 0, false, {
                     fileName: "[project]/components/features/flowchart-renderer.tsx",
-                    lineNumber: 96,
+                    lineNumber: 117,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/features/flowchart-renderer.tsx",
-                lineNumber: 78,
+                lineNumber: 99,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/features/flowchart-renderer.tsx",
-        lineNumber: 74,
+        lineNumber: 95,
         columnNumber: 5
     }, this);
 }

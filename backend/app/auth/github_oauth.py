@@ -36,8 +36,12 @@ async def exchange_github_code(code: str, db) -> Optional[dict]:
         )
         
         if response.status_code != 200:
+            error_detail = response.text
+            print(f"❌ GitHub token exchange failed: {response.status_code}")
+            print(f"Error details: {error_detail}")
             return None
         
+        print("✅ GitHub token exchange successful")
         token_data = response.json()
         access_token = token_data.get("access_token")
         
@@ -48,9 +52,14 @@ async def exchange_github_code(code: str, db) -> Optional[dict]:
         )
         
         if user_response.status_code != 200:
+            error_detail = user_response.text
+            print(f"❌ GitHub user info fetch failed: {user_response.status_code}")
+            print(f"Error details: {error_detail}")
             return None
         
+        print("✅ GitHub user info fetched successfully")
         user_info = user_response.json()
+        print(f"📧 User: {user_info.get('login')}")
         
         # Get user email if not public
         email = user_info.get("email")
@@ -71,6 +80,7 @@ async def exchange_github_code(code: str, db) -> Optional[dict]:
             picture=user_info.get("avatar_url"),
             github_token=access_token
         )
+        print(f"✅ User authenticated: {user.get('email')}")
         
         # Generate JWT
         jwt_token = generate_jwt({"user_id": str(user["_id"]), "email": user["email"]})

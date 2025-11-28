@@ -32,10 +32,15 @@ async def exchange_google_code(code: str, db) -> Optional[dict]:
     }
     
     async with httpx.AsyncClient() as client:
-        response = await client.post(token_url, json=payload)
+        # Google requires application/x-www-form-urlencoded, not JSON
+        response = await client.post(token_url, data=payload)
         if response.status_code != 200:
+            error_detail = response.text
+            print(f"❌ Google token exchange failed: {response.status_code}")
+            print(f"Error details: {error_detail}")
             return None
         
+        print("✅ Google token exchange successful")
         data = response.json()
         id_token = data.get("id_token")
         
@@ -50,9 +55,14 @@ async def exchange_google_code(code: str, db) -> Optional[dict]:
         )
         
         if info_response.status_code != 200:
+            error_detail = info_response.text
+            print(f"❌ Google user info fetch failed: {info_response.status_code}")
+            print(f"Error details: {error_detail}")
             return None
         
+        print("✅ Google user info fetched successfully")
         user_info = info_response.json()
+        print(f"📧 User email: {user_info.get('email')}")
         
         # Upsert user in MongoDB
         user_model = UserModel(db)
@@ -62,6 +72,7 @@ async def exchange_google_code(code: str, db) -> Optional[dict]:
             picture=user_info.get("picture"),
             google_sub=user_info.get("id")
         )
+        print(f"✅ User authenticated: {user.get('email')}")
         
         # Generate JWT
         jwt_token = generate_jwt({"user_id": str(user["_id"]), "email": user["email"]})

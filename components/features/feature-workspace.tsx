@@ -5,6 +5,7 @@ import CodeEditor from '@/components/features/code-editor'
 import AIResponseBox from '@/components/features/ai-response-box'
 import { apiRequest } from '@/lib/api'
 import { getAuthToken } from '@/lib/auth'
+import { getDefaultLanguage } from '@/lib/preferences'
 
 type FeatureType = 'documentation' | 'explain' | 'tests' | 'optimize'
 
@@ -46,7 +47,7 @@ interface FeatureWorkspaceProps {
 export default function FeatureWorkspace({ feature, title }: FeatureWorkspaceProps) {
   const config = featureConfig[feature]
   const [code, setCode] = useState(config.placeholder)
-  const [language, setLanguage] = useState('javascript')
+  const [language, setLanguage] = useState(getDefaultLanguage())
   const [fileName, setFileName] = useState('code')
   const [response, setResponse] = useState('')
   const [error, setError] = useState<string | null>(null)
@@ -88,6 +89,10 @@ export default function FeatureWorkspace({ feature, title }: FeatureWorkspacePro
     }
   }
 
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang as any) // CodeEditor passes string, we accept it
+  }
+
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 h-full p-6">
       <CodeEditor
@@ -95,7 +100,7 @@ export default function FeatureWorkspace({ feature, title }: FeatureWorkspacePro
         language={language}
         fileName={fileName}
         onCodeChange={setCode}
-        onLanguageChange={setLanguage}
+        onLanguageChange={handleLanguageChange}
         onFileNameChange={setFileName}
         onSubmit={handleSubmit}
         isSubmitting={isLoading}

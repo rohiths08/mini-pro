@@ -14,49 +14,49 @@ def build_doc_prompt(
         f"""
         Follow this format:
 
-        ### Function
+        Function:
 
         `[Function signature]`
 
 
 
-        ### Description
+        Description:
 
         [Explain what it does.]
 
 
 
-        ### Args
+        Args:
 
         - `name (type)`: Description.
 
 
 
-        ### Returns
+        Returns:
 
         - `type`: Description.
 
 
 
-        ### Raises
+        Raises:
 
         - `ExceptionType`: When it happens (if any).
 
 
 
-        ### Logic Explanation
+        Logic Explanation:
 
         [Step-by-step explanation.]
 
 
 
-        ### Time Complexity
+        Time Complexity:
 
         `O(n)` or similar.
 
 
 
-        ### Example
+        Example:
 
         ```{language}
         >>> [Code Example]
@@ -148,22 +148,35 @@ def build_flowchart_prompt(code: str, language: str) -> str:
         3. DO NOT write "```mermaid" or "```" at all
         4. Start your response IMMEDIATELY with "flowchart TD" or "graph TD"
         5. Use proper Mermaid syntax for nodes and connections
+        
+        NODE ID RULES (VERY IMPORTANT):
+        - Node IDs MUST be simple alphanumeric only (no underscores, no spaces, no special chars)
+        - Use camelCase for multi-word IDs: callFib, nCheck, returnN (NOT Call_Fib, N_Check, Return_N)
+        - Keep IDs short: A, B, C, Start, End, Check, Process, etc.
+        - VALID IDs: Start, End, checkUser, processData, A1, B2
+        - INVALID IDs: Call_Fib, N_Check, Return_N, check-user, process data
+        
+        NODE LABEL RULES:
         6. Keep node labels short and descriptive
         7. Use square brackets [text] for process nodes
         8. Use double parentheses ((text)) for start/end nodes
         9. Use curly braces {{{{text}}}} for decision nodes
         10. Use proper arrow syntax: --> for connections
+        11. Use |text| for edge labels on decision branches
         
         CORRECT Example (start response exactly like this):
         flowchart TD
-            Start((Start)) --> Input[Get Input]
-            Input --> Check{{Valid?}}
-            Check -->|Yes| Process[Process Data]
-            Check -->|No| Error[Show Error]
-            Process --> End((End))
-            Error --> End
+            Start((Start)) --> getInput[Get Input]
+            getInput --> checkValid{{Valid?}}
+            checkValid -->|Yes| processData[Process Data]
+            checkValid -->|No| showError[Show Error]
+            processData --> End((End))
+            showError --> End
 
         WRONG Examples (DO NOT do this):
+        - Using underscores: Call_Fib, N_Check, Return_N
+        - Using spaces: call fib, n check
+        - Using hyphens: call-fib, n-check
         - Starting with: ```mermaid
         - Ending with: ```
         - Adding any markdown formatting
@@ -173,6 +186,7 @@ def build_flowchart_prompt(code: str, language: str) -> str:
         {code}
         ```
 
-        Generate ONLY the flowchart code starting with "flowchart TD" and nothing else:
+        Generate ONLY the flowchart code starting with "flowchart TD" and nothing else.
+        Remember: Use camelCase for node IDs, NO underscores or special characters!
         """
     ).strip()

@@ -8,6 +8,7 @@ import { apiRequest } from '@/lib/api'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { User, Mail, Calendar, Key } from 'lucide-react'
+import { getDefaultLanguage, setDefaultLanguage, getDefaultTheme, setDefaultTheme, LANGUAGE_MAP, LANGUAGE_DISPLAY_MAP, type SupportedLanguage, type Theme } from '@/lib/preferences'
 
 interface UserProfile {
   id: string
@@ -23,6 +24,9 @@ export default function SettingsPage() {
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [defaultLanguage, setDefaultLanguageState] = useState<SupportedLanguage>('javascript')
+  const [defaultTheme, setDefaultThemeState] = useState<Theme>('dark')
+  const [settingsSaved, setSettingsSaved] = useState(false)
 
   useEffect(() => {
     const token = getAuthToken()
@@ -32,6 +36,10 @@ export default function SettingsPage() {
     }
     setIsReady(true)
     loadProfile(token)
+
+    // Load preferences from localStorage
+    setDefaultLanguageState(getDefaultLanguage())
+    setDefaultThemeState(getDefaultTheme())
   }, [router])
 
   const loadProfile = async (token: string) => {
@@ -46,6 +54,25 @@ export default function SettingsPage() {
     } finally {
       setIsLoading(false)
     }
+  }
+
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const displayName = event.target.value
+    const langCode = LANGUAGE_MAP[displayName]
+    if (langCode) {
+      setDefaultLanguageState(langCode)
+      setDefaultLanguage(langCode)
+      setSettingsSaved(true)
+      setTimeout(() => setSettingsSaved(false), 2000)
+    }
+  }
+
+  const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const theme = event.target.value as Theme
+    setDefaultThemeState(theme)
+    setDefaultTheme(theme)
+    setSettingsSaved(true)
+    setTimeout(() => setSettingsSaved(false), 2000)
   }
 
   if (!isReady) {
@@ -158,9 +185,14 @@ export default function SettingsPage() {
 
               {/* Preferences */}
               <div className="rounded-lg border border-border bg-card p-6 space-y-4">
-                <h2 className="text-lg font-semibold text-foreground border-b border-border pb-4">
-                  Preferences
-                </h2>
+                <div className="flex items-center justify-between border-b border-border pb-4">
+                  <h2 className="text-lg font-semibold text-foreground">
+                    Preferences
+                  </h2>
+                  {settingsSaved && (
+                    <span className="text-sm text-green-600 dark:text-green-400">✓ Saved</span>
+                  )}
+                </div>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
@@ -169,7 +201,11 @@ export default function SettingsPage() {
                         Set the default programming language for code editor
                       </p>
                     </div>
-                    <select className="h-9 rounded-md border border-border bg-background px-3 text-foreground text-sm">
+                    <select
+                      value={LANGUAGE_DISPLAY_MAP[defaultLanguage]}
+                      onChange={handleLanguageChange}
+                      className="h-9 rounded-md border border-border bg-background px-3 text-foreground text-sm"
+                    >
                       <option>JavaScript</option>
                       <option>TypeScript</option>
                       <option>Python</option>
@@ -188,7 +224,11 @@ export default function SettingsPage() {
                         Choose your preferred color theme
                       </p>
                     </div>
-                    <select className="h-9 rounded-md border border-border bg-background px-3 text-foreground text-sm">
+                    <select
+                      value={defaultTheme.charAt(0).toUpperCase() + defaultTheme.slice(1)}
+                      onChange={handleThemeChange}
+                      className="h-9 rounded-md border border-border bg-background px-3 text-foreground text-sm"
+                    >
                       <option>Dark</option>
                       <option>Light</option>
                       <option>System</option>

@@ -16,8 +16,8 @@ export default function FlowchartRenderer({ mermaidSource, isLoading, error }: F
   const chartDefinition = useMemo(() => mermaidSource.trim(), [mermaidSource])
 
   useEffect(() => {
-    mermaid.initialize({ 
-      startOnLoad: true, 
+    mermaid.initialize({
+      startOnLoad: true,
       theme: 'dark',
       securityLevel: 'loose',
       flowchart: {
@@ -36,20 +36,41 @@ export default function FlowchartRenderer({ mermaidSource, isLoading, error }: F
         setRenderError(error || null)
         return
       }
-      
-      // Validate that the chart definition looks correct
-      const trimmed = chartDefinition.trim()
-      if (!trimmed.startsWith('flowchart') && !trimmed.startsWith('graph')) {
-        if (isMounted) {
-          setRenderError('Invalid Mermaid syntax: Chart must start with "flowchart" or "graph"')
-          setSvg('')
-          console.error('Invalid mermaid code:', trimmed.substring(0, 100))
-        }
-        return
+
+
+      // Clean the mermaid code
+      const cleanMermaidCode = (code: string) => {
+        let cleaned = code.trim()
+        // Remove markdown code blocks if present
+        cleaned = cleaned.replace(/^```mermaid\s*/i, '').replace(/^```\s*/, '')
+        cleaned = cleaned.replace(/```$/, '')
+        return cleaned.trim()
       }
-      
+
+      const cleanedDefinition = cleanMermaidCode(chartDefinition)
+
+      // Validate that the chart definition looks correct
+      // Relaxed validation to support more diagram types
+      const validTypes = ['flowchart', 'graph', 'sequenceDiagram', 'classDiagram', 'stateDiagram', 'erDiagram', 'gantt', 'pie', 'journey', 'gitGraph', 'C4Context']
+      const startsWithValidType = validTypes.some(type => cleanedDefinition.startsWith(type))
+
+      if (!startsWithValidType) {
+        // Fallback: if it doesn't start with a known type, try to find it in the first few lines
+        const lines = cleanedDefinition.split('\n')
+        const hasValidType = lines.some(line => validTypes.some(type => line.trim().startsWith(type)))
+
+        if (!hasValidType) {
+          if (isMounted) {
+            setRenderError('Invalid Mermaid syntax: Could not identify diagram type')
+            setSvg('')
+            console.error('Invalid mermaid code:', cleanedDefinition.substring(0, 100))
+          }
+          return
+        }
+      }
+
       try {
-        const { svg } = await mermaid.render(`flowchart-${Date.now()}`, chartDefinition)
+        const { svg } = await mermaid.render(`flowchart-${Date.now()}`, cleanedDefinition)
         if (isMounted) {
           setSvg(svg)
           setRenderError(null)
