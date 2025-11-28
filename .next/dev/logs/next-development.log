@@ -1,34 +1,11 @@
-[00:00:00.548] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
-[00:00:00.642] Server  LOG      ✓ Ready in 449ms
-[00:01:53.326] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:56.265] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:56.265] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:01:56.265] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/page/documentation","route":"/page/[slug]"}
-[00:01:56.265] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763614933796}
-[00:01:56.265] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763614933796}
-[00:02:28.861] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/flowchart color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/flowchart","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763614966392}
-[00:02:33.335] Browser LOG     Received mermaid code: flowchart TD
-    Start((Start)) --> HandleRequest[handleRequest(req)]
-    HandleRequest --> CheckUse
-[00:02:33.335] Browser ERROR   Mermaid render error: Parse error on line 2:
-...equest[handleRequest(req)]    HandleReq
------------------------^
-Expecting 'SQE', 'DOUBLECIRCLEEND', 'PE', '-)', 'STADIUMEND', 'SUBROUTINEEND', 'PIPE', 'CYLINDEREND', 'DIAMOND_STOP', 'TAGEND', 'TRAPEND', 'INVTRAPEND', 'UNICODE_TEXT', 'TEXT', 'TAGSTART', got 'PS'
-[00:02:33.335] Browser ERROR   Mermaid code: flowchart TD
-    Start((Start)) --> HandleRequest[handleRequest(req)]
-    HandleRequest --> CheckUser{{!req.user?}}
-    CheckUser -->|Yes| Redirect[redirect("/login")]
-    CheckUser -->|No| RenderDashboard[renderDashboard(req.user)]
-    Redirect --> End((End))
-    RenderDashboard --> End((End))
-[00:03:31.762] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:31.936] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:31.936] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/page/flowchart","route":"/page/[slug]"}
-[00:03:31.936] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/flowchart color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/flowchart","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763615029464}
-[00:03:36.902] Browser LOG     Received mermaid code: flowchart TD
-    Start((Start)) --> HandleRequest[Handle Request]
-    HandleRequest --> CheckUser{{!
-[00:04:11.113] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/optimize color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/optimize","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763615068644}
-[00:04:11.878] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/tests color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/tests","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763615069404}
-[00:04:12.336] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/explain color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/explain","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763615069863}
-[00:04:13.150] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763615070673}
+[00:00:01.253] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
+[00:00:01.489] Server  LOG      ✓ Ready in 981ms
+[00:00:09.501] Server  LOG      ○ Compiling / ...
+[00:00:10.659] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.763] Server  LOG      ○ Compiling /page/[slug] ...
+[00:00:17.385] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:17.385] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:17.385] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764319279166}
+[00:00:17.561] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764319279357}
+[00:00:40.169] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764319302021}
+[00:00:42.421] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764319304257}

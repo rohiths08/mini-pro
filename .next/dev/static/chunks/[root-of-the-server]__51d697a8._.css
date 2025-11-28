@@ -444,10 +444,6 @@
     position: absolute;
   }
 
-  .fixed {
-    position: fixed;
-  }
-
   .relative {
     position: relative;
   }
@@ -1167,10 +1163,6 @@
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
-  }
-
-  .running {
-    animation-play-state: running;
   }
 
   .selection\:bg-primary ::selection, .selection\:bg-primary::selection {
