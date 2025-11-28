@@ -37,31 +37,6 @@ The application features a modern, responsive frontend built with **Next.js 16**
 -   **Authentication**: Python-Jose (JWT), Passlib (Bcrypt)
 -   **HTTP Client**: Httpx
 
-## Project Structure
-
-```
-mini-pro/
-├── app/                    # Next.js App Router pages
-│   ├── login/              # Authentication pages
-│   ├── page/               # Feature pages (dynamic routing)
-│   └── ...
-├── backend/                # FastAPI Backend
-│   ├── app/
-│   │   ├── auth/           # Authentication logic
-│   │   ├── core/           # Core AI services (doc, flowchart, etc.)
-│   │   ├── routes/         # API Endpoints
-│   │   └── models/         # Database models
-│   ├── .env                # Backend environment variables
-│   └── requirements.txt    # Python dependencies
-├── components/             # React components
-│   ├── dashboard/          # Dashboard layout components
-│   ├── features/           # Feature-specific components (Workspace, etc.)
-│   └── ui/                 # Reusable UI components (Shadcn)
-├── lib/                    # Frontend utilities
-├── public/                 # Static assets
-└── ...
-```
-
 ## Setup & Installation
 
 ### Prerequisites
