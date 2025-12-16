@@ -10,6 +10,7 @@ interface AIResponseBoxProps {
   title: string
   content: string
   isLoading?: boolean
+  isStreaming?: boolean
   error?: string | null
   emptyMessage?: string
 }
@@ -18,6 +19,7 @@ export default function AIResponseBox({
   title,
   content,
   isLoading,
+  isStreaming,
   error,
   emptyMessage = 'Run the analysis to view AI output.',
 }: AIResponseBoxProps) {
@@ -50,8 +52,8 @@ export default function AIResponseBox({
           </Button>
         </div>
       </div>
-      <div className="flex-1 overflow-auto p-4">
-        {isLoading ? (
+      <div className="flex-1 overflow-auto p-4" id="ai-response-content">
+        {isLoading || isStreaming ? (
           <div className="animate-pulse space-y-2">
             <div className="h-4 bg-muted-foreground/20 rounded w-3/4" />
             <div className="h-4 bg-muted-foreground/20 rounded w-full" />
@@ -69,7 +71,7 @@ export default function AIResponseBox({
                 h2: ({ node, ...props }) => <h2 className="text-xl font-semibold mt-6 mb-3 text-foreground border-b border-border/50 pb-1" {...props} />,
                 h3: ({ node, ...props }) => <h3 className="text-lg font-medium mt-5 mb-2 text-foreground" {...props} />,
                 h4: ({ node, ...props }) => <h4 className="text-base font-medium mt-4 mb-2 text-foreground/90" {...props} />,
-                p: ({ node, ...props }) => <p className="mb-3 leading-relaxed text-foreground/90" {...props} />,
+                p: ({ node, ...props }) => <div className="mb-3 leading-relaxed text-foreground/90" {...props} />,
                 ul: ({ node, ...props }) => <ul className="list-disc list-outside ml-6 mb-4 space-y-2" {...props} />,
                 ol: ({ node, ...props }) => <ol className="list-decimal list-outside ml-6 mb-4 space-y-2" {...props} />,
                 li: ({ node, ...props }) => <li className="text-foreground/90 leading-relaxed" {...props} />,
@@ -113,6 +115,9 @@ export default function AIResponseBox({
             >
               {content}
             </ReactMarkdown>
+            {isStreaming && (
+              <span className="inline-block w-2 h-4 bg-primary animate-pulse ml-1" />
+            )}
           </div>
         ) : (
           <p className="text-sm text-muted-foreground">{emptyMessage}</p>

@@ -1,15 +1,325 @@
-[00:00:01.315] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
-[00:00:01.606] Server  LOG      ✓ Ready in 1141ms
-[00:04:42.876] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:45.921] Server  LOG      ○ Compiling /page/[slug] ...
-[00:04:47.080] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:47.080] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:04:47.080] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/page/documentation","route":"/page/[slug]"}
-[00:04:47.080] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764343713624}
-[00:04:47.080] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764343713624}
-[00:05:05.266] Server  WARN     ⚠ Cross origin request detected from 192.168.1.42 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+[00:00:02.395] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
+[00:00:02.925] Server  LOG      ✓ Ready in 1989ms
+[00:00:08.148] Server  LOG      ○ Compiling /page/[slug] ...
+[00:00:29.314] Server  WARN     ⚠ Cross origin request detected from 172.16.9.230 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:05:05.287] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:05.689] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:05:05.689] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:05:05.689] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.1.42:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.1.42:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764343732232}
+[00:00:29.411] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:41.313] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:41.314] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:41.314] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.16.9.230:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://172.16.9.230:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765172292311}
+[00:00:42.701] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.646] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.16.9.230:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://172.16.9.230:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765172294612}
+[00:00:44.044] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:44.044] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/page/documentation","route":"/page/[slug]"}
+[00:00:44.044] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765172294834}
+[00:00:52.083] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.718] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:52.718] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/page/documentation","route":"/page/[slug]"}
+[00:00:52.718] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765172303709}
+[00:00:56.425] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765172307424}
+[00:00:58.647] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765172309633}
+[00:13:00.807] Browser LOG     🌊 Starting streaming to: /ai/documentation/stream
+[00:13:01.173] Browser LOG     ✅ Stream started!
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.501] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.502] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.502] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.502] Browser LOG     📦 Chunk received: 50 chars
+[00:13:15.502] Browser LOG     📦 Chunk received: 23 chars
+[00:13:15.502] Browser LOG     ✅ Streaming complete!
+[00:13:30.072] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.16.9.230:3000/page/explain color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://172.16.9.230:3000/page/explain","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765173061072}
+[00:14:09.679] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.16.9.230:3000/page/tests color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://172.16.9.230:3000/page/tests","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765173100674}
+[00:14:11.337] Browser LOG     🌊 Starting streaming to: /ai/tests/stream
+[00:14:11.655] Browser LOG     ✅ Stream started!
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.255] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 50 chars
+[00:14:55.256] Browser LOG     📦 Chunk received: 43 chars
+[00:14:55.256] Browser LOG     ✅ Streaming complete!
+[00:14:58.499] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.16.9.230:3000/page/flowchart color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://172.16.9.230:3000/page/flowchart","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765173149480}
+[00:57:42.854] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765175713852}
+[00:57:55.066] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:55.697] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:57:55.697] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login/success","route":"/login/success"}
+[00:57:55.697] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login/success?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkxZWI4OGZiZjUyMTI1NTJkZDQ1ODk5IiwiZW1haWwiOiJzaHJlZWdvd2RhMzQwQGdtYWlsLmNvbSIsImV4cCI6MTc2NTI2MjEyM30.iJvsJnkMJ-yHcg__F5lfRNJa4sQzanmiL95YKqEfVfA color: rgb(120, 120, 120) color: inherit {"dp":"/login/success","o":"http://localhost:3000/login/success?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkxZWI4OGZiZjUyMTI1NTJkZDQ1ODk5IiwiZW1haWwiOiJzaHJlZWdvd2RhMzQwQGdtYWlsLmNvbSIsImV4cCI6MTc2NTI2MjEyM30.iJvsJnkMJ-yHcg__F5lfRNJa4sQzanmiL95YKqEfVfA","r":"https://accounts.google.com/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765175726694}
+[00:57:56.388] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765175727319}
+[00:58:27.987] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/explain color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/explain","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765175758988}
+[00:58:40.918] Browser LOG     🌊 Starting streaming to: /ai/explain/stream
+[00:58:40.919] Browser LOG     ✅ Stream started!
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.396] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 50 chars
+[00:58:54.397] Browser LOG     📦 Chunk received: 26 chars
+[00:58:54.397] Browser LOG     ✅ Streaming complete!
+[00:59:08.016] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/flowchart color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/flowchart","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765175799011}
+[00:59:48.613] Browser LOG     Received mermaid code: flowchart TD
+    Start((Start)) --> checkUser{User Exists?}
+    checkUser -->|No| redirect["Redirect
+[01:00:07.384] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/optimize color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/optimize","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765175858387}
+[01:00:11.562] Browser LOG     🌊 Starting streaming to: /ai/optimize/stream
+[01:00:11.562] Browser LOG     ✅ Stream started!
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.840] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 50 chars
+[01:00:38.841] Browser LOG     📦 Chunk received: 47 chars
+[01:00:38.841] Browser LOG     ✅ Streaming complete!
+[01:01:24.121] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/tests color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/tests","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765175935121}
+[01:10:23.099] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:23.430] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:10:23.430] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[01:10:23.430] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.16.9.230:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://172.16.9.230:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176474434}
+[01:10:30.971] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/optimize color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/optimize","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176481964}
+[01:10:31.123] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/flowchart color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/flowchart","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176482122}
+[01:10:31.270] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/explain color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/explain","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176482271}
+[01:10:31.511] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176482496}
+[01:10:32.535] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:32.759] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:10:32.759] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[01:10:32.759] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176483762}
+[01:10:35.202] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176486172}
+[01:10:36.182] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176487144}
+[01:10:41.673] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176492671}
+[01:10:45.392] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176496379}
+[01:10:55.195] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176506197}
+[01:11:05.662] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:11:06.230] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:11:06.230] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login/success","route":"/login/success"}
+[01:11:06.230] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login/success?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkxZWI4OGZiZjUyMTI1NTJkZDQ1ODk5IiwiZW1haWwiOiJzaHJlZWdvd2RhMzQwQGdtYWlsLmNvbSIsImV4cCI6MTc2NTI2MjkxNn0.TuSyG9GTT9fN8kUpKGIpLd6yBJ5Uj2c4w6bdLRpbJEI color: rgb(120, 120, 120) color: inherit {"dp":"/login/success","o":"http://localhost:3000/login/success?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkxZWI4OGZiZjUyMTI1NTJkZDQ1ODk5IiwiZW1haWwiOiJzaHJlZWdvd2RhMzQwQGdtYWlsLmNvbSIsImV4cCI6MTc2NTI2MjkxNn0.TuSyG9GTT9fN8kUpKGIpLd6yBJ5Uj2c4w6bdLRpbJEI","r":"https://accounts.google.com/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176517231}
+[01:11:06.773] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/documentation color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/documentation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176517749}
+[01:11:20.793] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/explain color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/explain","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176531783}
+[01:11:22.325] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/tests color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/tests","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176533329}
+[01:11:28.832] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/optimize color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/optimize","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176539822}
+[01:11:35.177] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/flowchart color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/flowchart","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176546174}
+[01:11:41.210] Browser LOG     Received mermaid code: flowchart TD
+    Start((Start)) --> handleRequest["handleRequest(req)"]
+    handleRequest --> checkU
+[01:11:41.210] Browser ERROR   Mermaid render error: Parse error on line 4:
+..."redirect(\"/login\")"]    redirect -->
+-----------------------^
+Expecting 'SQE', 'DOUBLECIRCLEEND', 'PE', '-)', 'STADIUMEND', 'SUBROUTINEEND', 'PIPE', 'CYLINDEREND', 'DIAMOND_STOP', 'TAGEND', 'TRAPEND', 'INVTRAPEND', 'UNICODE_TEXT', 'TEXT', 'TAGSTART', got 'STR'
+[01:11:41.210] Browser ERROR   Mermaid code: flowchart TD
+    Start((Start)) --> handleRequest["handleRequest(req)"]
+    handleRequest --> checkUser{req.user?}
+    checkUser -->|No| redirect["redirect(\"/login\")"]
+    redirect --> End((End))
+    checkUser -->|Yes| renderDashboard["renderDashboard(req.user)"]
+    renderDashboard --> End((End))
+[01:11:45.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:11:46.362] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:11:46.362] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/page/flowchart","route":"/page/[slug]"}
+[01:11:46.362] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/flowchart color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/flowchart","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176557324}
+[01:11:51.614] Browser LOG     Received mermaid code: flowchart TD
+    Start((Start)) --> checkUser{User Exists?}
+    checkUser -->|No| redirect["Redirect
+[01:11:57.240] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/page/github color: rgb(120, 120, 120) color: inherit {"dp":"/page/[slug]","o":"http://localhost:3000/page/github","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765176568237}
