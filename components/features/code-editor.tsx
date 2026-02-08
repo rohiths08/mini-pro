@@ -3,6 +3,7 @@
 import Editor from '@monaco-editor/react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Sparkles } from 'lucide-react'
 
 const languages = ['javascript', 'typescript', 'python', 'java', 'go', 'csharp', 'cpp', 'c']
 
@@ -15,6 +16,7 @@ interface CodeEditorProps {
   isSubmitting?: boolean
   onLanguageChange?: (lang: string) => void
   onFileNameChange?: (name: string) => void
+  onAutoDetect?: () => void
 }
 
 export default function CodeEditor({
@@ -26,6 +28,7 @@ export default function CodeEditor({
   isSubmitting,
   onLanguageChange,
   onFileNameChange,
+  onAutoDetect,
 }: CodeEditorProps) {
   return (
     <div className="flex flex-col h-full rounded-lg border border-border bg-muted overflow-hidden">
@@ -43,17 +46,28 @@ export default function CodeEditor({
           </label>
           <label className="text-sm text-muted-foreground flex items-center gap-2">
             Language
-            <select
-              value={language}
-              onChange={(event) => onLanguageChange?.(event.target.value)}
-              className="h-8 rounded-md border border-border bg-background px-2 text-foreground text-sm"
-            >
-              {languages.map((lang) => (
-                <option key={lang} value={lang}>
-                  {lang}
-                </option>
-              ))}
-            </select>
+            <div className="flex items-center gap-1">
+              <select
+                value={language}
+                onChange={(event) => onLanguageChange?.(event.target.value)}
+                className="h-8 rounded-md border border-border bg-background px-2 text-foreground text-sm"
+              >
+                {languages.map((lang) => (
+                  <option key={lang} value={lang}>
+                    {lang}
+                  </option>
+                ))}
+              </select>
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={onAutoDetect}
+                title="Auto-detect language"
+                className="h-8 px-2"
+              >
+                <Sparkles className="h-4 w-4" />
+              </Button>
+            </div>
           </label>
           <Button size="sm" variant="outline" onClick={onSubmit} disabled={isSubmitting}>
             {isSubmitting ? 'Running...' : 'Submit'}
